@@ -1,0 +1,52 @@
+.apptitle {
+  margin: 1rem 0;
+  color: #ff2968;
+  text-align: center;
+  font-size: 50px;
+}
+
+.form-control {
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+  width: 300px;
+  font-size: 20px;
+  height: 2px;
+  padding: 20px;
+  color: gray;
+}
+
+.todolist {
+  padding-left: 0;
+}
+.todolist .todoitem {
+  position: relative;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  border-top: 1px solid #ccc;
+}
+.todolist .todoitem.done .form-check-label {
+  color: #999;
+  text-decoration: line-through;
+}
+.todolist .todoitem.highlight {
+  border-color: #ff2968;
+  background-color: #ff8fb0;
+}
+.todolist .todoitem.highlight:last-child {
+  border-color: #ff2968;
+}
+.todolist .todoitem:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.todolist .todoitem .btn-danger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.todolist .todoitem .form-check-label {
+  width: 100%;
+}
+.todolist .todoitem .form-check-label .form-check-input {
+  margin-right: 1rem;
+}
