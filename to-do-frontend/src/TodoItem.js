@@ -97,7 +97,12 @@ class TodoItem extends Component {
         <button
           type="button"
           className="btn btn-danger btn-sm"
-          onClick={this.deleteItem}
+          onClick={() => {
+                          if (window.confirm("Delete the item?")) {
+                           let removeToCollection = this.deleteItem.bind(this, 121);
+                           removeToCollection();
+                           }
+                         }}
         >
           X
         </button>
