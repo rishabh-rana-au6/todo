@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import queryString from 'query-string'
-import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -162,7 +161,6 @@ class App extends Component {
         return (
             <div>
                 <div className="apptitle">TODO LIST</div>
-                <Link to = "/"><Button >Go Home</Button></Link>
                 <div className="row">
                     <div className="col-md-3">
                         <form className="row" style={{ display: "grid", gridTemplateColumns: "auto auto", width: "700px", marginLeft: "300px" }}>

@@ -6,15 +6,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { storeInfoInRedux } from  './Redux/Actions'
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch"
-    }
-  }
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     "& > *": {
+//       margin: theme.spacing(1),
+//       width: "25ch"
+//     }
+//   }
+// }));
 
 class App extends Component {
   state = {
@@ -22,6 +24,11 @@ class App extends Component {
     text: ''
   };
 
+  componentDidMount(){
+    this.setState({
+      items: this.props.todos
+    })
+  }
   handleTextChange = event => {
     this.setState({
       text: event.target.value
@@ -50,6 +57,7 @@ class App extends Component {
       name: this.state.text,
       toDos: []
     };
+this.props.storeInfoInRedux(newItem)
 
     console.log(newItem)
     
@@ -98,7 +106,6 @@ class App extends Component {
     
 
   }
-
 
 
   handleDeleteItem = itemId => {
@@ -179,5 +186,17 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return{
+    todos:state
+  }
+}
 
-export default App;
+ const mapDispatchToProps = {
+  storeInfoInRedux : storeInfoInRedux
+
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
